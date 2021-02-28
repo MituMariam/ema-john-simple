@@ -1,0 +1,11 @@
+.shop_container{
+    display: flex;
+    /* padding: 10px; */
+}
+.product_container{
+    width: 70%;
+    background: #f5f5f5;
+}
+.cart_container{
+    width: 30%;
+}

@@ -1,14 +1,19 @@
-import React from 'react';
-import logo from '../../images/logo.png'
-import './Header.css'
+import React from "react";
+import logo from "../../images/logo.png";
+import "./Header.css";
 
 const Header = () => {
-    return (
-        <div className="header">
-            <img src={logo} alt=""/>
-           {/* <h1>This is header</h1>  */}
-        </div>
-    );
+  return (
+    <div className="header">
+      <img src={logo} alt="" />
+      {/* <h1>This is header</h1>  */}
+      <nav>
+        <a href="/shop">shop</a>
+        <a href="/review">order review</a>
+        <a href="/manage_inventory">manage inventory</a>
+      </nav>
+    </div>
+  );
 };
 
 export default Header;
