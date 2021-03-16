@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import  "./Cart.css";
 
 const Cart = (props) => {
     const cart = props.cart
     // const {name} = props.cart
     console.log(cart);
-    const total = cart.reduce((total,prd)=> total + prd.price, 0)
+    const total = cart.reduce((total,prd)=> total + prd.price * prd.quantity, 0)
 
 
     let shipping = 0;
