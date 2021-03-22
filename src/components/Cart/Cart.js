@@ -7,7 +7,15 @@ const Cart = (props) => {
     const cart = props.cart
     // const {name} = props.cart
     console.log(cart);
-    const total = cart.reduce((total,prd)=> total + prd.price * prd.quantity, 0)
+    // const total = cart.reduce((total,prd)=> total + prd.price * prd.quantity, 0)
+
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+        const product = cart[i];
+        total = total + product.price * product.quantity;
+// debugger;
+        
+    }
 
 
     let shipping = 0;
@@ -34,8 +42,11 @@ const Cart = (props) => {
                 <h6>Product Price: {total}</h6>
                 <h6>tax: {tax}</h6>
                 <h6>Total Price: {grandTotal}</h6>
+                {
+                    props.children
+                }
               
-                <Link to="/review">   <button>Review Order</button> </Link>
+                {/* <Link to="/review">   <button>Review Order</button> </Link> */}
                 
         </div>
     );
