@@ -6,6 +6,7 @@ import {removeFromDatabaseCart} from '../../utilities/databaseManager'
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import happyImage from '../../images/giphy.gif'
+import { useHistory } from 'react-router';
 
 const Review = () => {
 
@@ -23,7 +24,13 @@ const Review = () => {
         // console.log(productKeys);
     }, [])
 
-
+const history = useHistory()
+    const handleProceedCheckout = () =>{
+        history.push('/shipment');
+        //   setCart([]);
+        //   setorderPlaced(true)
+        //   processOrder();
+        }
     const removeProduct = (productKey) => {
         console.log('remove clicked')
         const newCart = cart.filter(pd => pd.key !== productKey)
@@ -31,11 +38,7 @@ const Review = () => {
        removeFromDatabaseCart(productKey);
     };
 
-    const handlePlaceorder = () =>{
-      setCart([]);
-      setorderPlaced(true)
-      processOrder();
-    }
+  
     let thanku;
     if(orderPlaced){
         thanku =  <img src={happyImage} alt=""/>
@@ -52,7 +55,7 @@ const Review = () => {
                 
              <Cart cart={cart}>
             
-                     <button onClick={handlePlaceorder}>Place order</button>
+                     <button onClick={handleProceedCheckout}>Proceed Checkout</button>
                  
              </Cart>
                 
